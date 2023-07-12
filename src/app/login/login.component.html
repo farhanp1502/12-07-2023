@@ -1,0 +1,28 @@
+<p>login works!</p>
+
+<div class="form bg-dark text-light m-3 p-3" style="height: fit-content; width: fit-content;" >
+
+  <form autocomplete="off" #loginform="ngForm" (ngSubmit)="login(data1)">
+    <div class="email">
+      <label for="email">Email Address</label>
+      <input name="emailaddress" [(ngModel)]="data1.emailaddress" type="email" />
+    </div>
+    <div class="password">
+      <label for="password">Password</label>
+      <input name="password" [(ngModel)]="data1.password" class="Form-control" type="password" />
+    </div>
+    <div class="submit">
+      <button  class="btn btn-info" type="submit">Submit</button>
+      <!-- (click)="fun($event)" -->
+    </div>
+  </form>
+  
+</div>
+<div *ngIf="!selected" class="answer">
+  <pre>
+    Email: {{data1.emailaddress}}
+    Password: {{data1.password}}
+  </pre>
+</div>
+
+
